@@ -1,0 +1,86 @@
+.welcomeText {
+    width: 100%;
+    height: 20vh;
+    position: relative;
+    display: grid;
+    place-items: center;
+    background-color: #d1d1d1;
+}
+.welcomeText>h1 {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: whitesmoke;
+    text-shadow: 1px 1px 5px black;
+}
+.wave {
+    position: absolute;
+    top: 0;
+    left : 0;
+    width: 100%;
+    z-index: 1;
+}
+.cards {
+    margin-top:3rem;
+    display: flex;
+    justify-content: space-around;
+    z-index: 10;
+    gap:  2rem;
+}
+.kartu {
+    width: 400px;
+    height: 200px;
+    background-color: rgba(245, 245, 245, 0.733);
+    font-family: Montserrat, "Helvetica Neue", Arial, sans-serif
+    ;
+    color:#576071;
+    border-radius: .5rem;
+}
+.main {
+    margin-top: 80vh;
+    position: relative;
+    z-index: 100;
+}
+
+.questions {
+    width: 70%;
+    margin: auto;
+    position: relative;
+}
+.answers {
+    display: flex;
+    justify-content: space-around;
+    gap : 1rem;
+}
+.jawab {
+    background-color: white;
+    width: var(--ukuran);
+    height: var(--ukuran);
+    border-radius: 50%;
+    border: 3px solid var(--warna);
+    align-self: center;
+    display: grid;
+    place-items: center;
+    color: whitesmoke;
+}
+
+.jawab:hover {
+    background-color: var(--warna);
+    cursor: pointer;
+}
+.questionHide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.questionHide::after {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.534);
+    z-index: 10;
+}   
