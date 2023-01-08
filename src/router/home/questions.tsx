@@ -7,6 +7,7 @@ import pertanyaan from "../../util/pertanyaan";
 import Cookies from "js-cookie";
 import Swal from "sweetalert2";
 import { ProgressBar } from "react-bootstrap";
+// @ts-nocheck
 const bobot = [10, 5, 3];
 const bobot2 = [3, 5, 10];
 
@@ -68,6 +69,7 @@ export default function Questions() {
                   
                   if (ind * 10 + ind2 + 1 == (ind + 1) * 10) {
                     setJenisIndex(ind + 1);
+                    
                     questionScroll?.current?.scrollIntoView();
                   }
 
