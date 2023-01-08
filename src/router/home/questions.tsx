@@ -7,7 +7,6 @@ import pertanyaan from "../../util/pertanyaan";
 import Cookies from "js-cookie";
 import Swal from "sweetalert2";
 import { ProgressBar } from "react-bootstrap";
-// @ts-nocheck
 const bobot = [10, 5, 3];
 const bobot2 = [3, 5, 10];
 
@@ -69,6 +68,7 @@ export default function Questions() {
                   
                   if (ind * 10 + ind2 + 1 == (ind + 1) * 10) {
                     setJenisIndex(ind + 1);
+// @ts-ignore
                     
                     questionScroll?.current?.scrollIntoView();
                   }
@@ -138,7 +138,10 @@ function Pertanyaan({
           return (
             <div
               className={Style.jawab}
+              
               style={{
+// @ts-ignore
+
                 "--warna": "#33a474",
                 "--ukuran": `${ukuran}px`,
                 backgroundColor: terjawab == ind ? "var(--warna)" : "",
@@ -169,6 +172,8 @@ function Pertanyaan({
             <div
               className={Style.jawab}
               style={{
+// @ts-ignore
+
                 "--warna": "#88619a",
                 "--ukuran": `${ukuran}px`,
                 backgroundColor: terjawab == ind + 3 ? "var(--warna)" : "",
