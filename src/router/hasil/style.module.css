@@ -7,3 +7,18 @@
     width: 60%;
     margin: auto;
 }
+
+.chartContainer {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 100%;
+}
+.chart {
+    width: 100%;
+}
+@media screen and (max-width:720px) {
+    .charts {
+        width: 100%;
+    }
+}

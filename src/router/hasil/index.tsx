@@ -22,10 +22,15 @@ export default function Hasil() {
             <p>Anda adalah {kepribadian.tentang}</p>
         </div>
         <div className={Style.charts}>
+            <div className={Style.chartContainer}>
+
             <Charts title="Extrovert vs Introvert" label={["Extrovert", "Introvert"]} data={[jsonHasil["Extrovert"], jsonHasil["Introvert"]] } />
             <Charts title="Sensing vs Intuitive" label={["Sensing", "Intuitive"]} data={[jsonHasil["Sensing"], jsonHasil["Intuitive"]] } />
             <Charts title="Thinking vs Feeling" label={["Thinking", "Feeling"]} data={[jsonHasil["Thinking"], jsonHasil["Feeling"]] } />
             <Charts title="Judging vs Perceiving" label={["Judging", "Perceiving"]} data={[jsonHasil["Judging"], jsonHasil["Perceiving"]] } />
+
+            </div>
+
         </div>
         </>
 

@@ -1,5 +1,6 @@
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
+import Style from "./style.module.css"
 
 export default function Charts({title, data, label}:{title:string, data:number[], label:string[]}) {
     const option = {chart: {
@@ -25,12 +26,12 @@ export default function Charts({title, data, label}:{title:string, data:number[]
             cursor: 'pointer',
             dataLabels: {
                 enabled: true,
-                format: '{point.percentage:.1f} %'
+                format: '{point.name}:\n{point.percentage:.1f} %'
             }
         }
     },
     series: [{
-        name: 'Brands',
+        name: 'Persen',
         colorByPoint: true,
         data: data.map((el,ind) => {
             return {
@@ -40,7 +41,11 @@ export default function Charts({title, data, label}:{title:string, data:number[]
         })
     }]}
 
+
     return(
+        <div className={Style.chart}>
+
         <HighchartsReact highcharts={Highcharts} options={option} />
+        </div>
     )
 }
