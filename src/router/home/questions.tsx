@@ -144,7 +144,7 @@ function Pertanyaan({
           left: "0",
         }}
       ></div>
-      <p style={{ textAlign: "center", fontSize: "x-large" }}>{pertanyaan}</p>
+      <p style={{ textAlign: "center", fontSize: !isMobile ? "x-large" : "large" }}>{pertanyaan}</p>
       <div className={Style.answers}>
         {bobot.map((el, ind) => {
           let ukuran = 0;
