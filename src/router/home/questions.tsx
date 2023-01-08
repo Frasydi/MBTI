@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import Style from "./style.module.css";
 import Carousel from "react-bootstrap/Carousel";
 import ItemSlide from "./itemSlide";
@@ -13,7 +13,7 @@ const bobot2 = [3, 5, 10];
 export default function Questions() {
   const [jawaban, setJawaban] = useState<{ [key: string]: number }>({});
   const [index, setIndex] = useState(0);
-  const nav = useNavigate()
+  const nav = useNavigate();
   const questionScroll = useRef(null);
   const [jenisIndex, setJenisIndex] = useState(0);
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function Questions() {
     return () => {
       setIndex(0);
       setJawaban({});
-      setJenisIndex(0)
+      setJenisIndex(0);
     };
   }, [0]);
   useEffect(() => {
@@ -36,7 +36,19 @@ export default function Questions() {
   }, [index]);
   return (
     <div ref={questionScroll} className={Style.questions}>
-    <ProgressBar style={{ width:'100%',position:"fixed", bottom: 0,left: 0, zIndex:"30"}} variant="success" animated now={(index/(pertanyaan.length*10))*100} label={`${((index/(pertanyaan.length*10))*100).toFixed(2)}%`} />
+      <ProgressBar
+        style={{
+          width: "100%",
+          position: "fixed",
+          bottom: 0,
+          left: 0,
+          zIndex: "30",
+        }}
+        variant="success"
+        animated
+        now={(index / (pertanyaan.length * 10)) * 100}
+        label={`${((index / (pertanyaan.length * 10)) * 100).toFixed(2)}%`}
+      />
       <ItemSlide
         index={jenisIndex}
         elements={pertanyaan.map((el, ind) => (
@@ -58,18 +70,27 @@ export default function Questions() {
                   if (ind * 10 + ind2 + 1 == pertanyaan.length * 10) {
                     const date = new Date();
                     date.setTime(date.getTime() + 60 * 60 * 1000);
-                    Cookies.set("hasil", JSON.stringify(jawabanTemp), {expires : date});
-                    Swal.fire({title : "Terima Kasih Sudah Mengisi", text : "Anda akan dialihkan ke halaman hasil setelah 2 detik", timer  :2000, allowOutsideClick : false, allowEscapeKey : false, showCancelButton : false, showConfirmButton : false}).then(ef => {
-                        nav("/hasil")
+                    Cookies.set("hasil", JSON.stringify(jawabanTemp), {
+                      expires: date,
+                    });
+                    Swal.fire({
+                      title: "Terima Kasih Sudah Mengisi",
+                      text: "Anda akan dialihkan ke halaman hasil setelah 2 detik",
+                      timer: 2000,
+                      allowOutsideClick: false,
+                      allowEscapeKey: false,
+                      showCancelButton: false,
+                      showConfirmButton: false,
+                    }).then((ef) => {
+                      nav("/hasil");
+                    });
+                    return;
+                  }
 
-                    })
-                    return
-                  } 
-                  
                   if (ind * 10 + ind2 + 1 == (ind + 1) * 10) {
                     setJenisIndex(ind + 1);
-// @ts-ignore
-                    
+                    // @ts-ignore
+
                     questionScroll?.current?.scrollIntoView();
                   }
 
@@ -96,11 +117,14 @@ function Pertanyaan({
   jenis: string[];
 }) {
   const [terjawab, setTerjawab] = useState(-1);
+  const [isMobile, setMobile] = useState(false);
   useEffect(() => {
+    setMobile(window.innerWidth > 720 ? false : true);
     return () => {
       setTerjawab(-1);
     };
   }, []);
+
   return (
     <div
       style={{
@@ -124,23 +148,40 @@ function Pertanyaan({
       <div className={Style.answers}>
         {bobot.map((el, ind) => {
           let ukuran = 0;
-          switch (ind) {
-            case 0:
-              ukuran = 70;
-              break;
-            case 1:
-              ukuran = 50;
-              break;
-            case 2:
-              ukuran = 40;
-              break;
+          if (isMobile) {
+            switch (ind) {
+              case 0:
+                ukuran = 40;
+                break;
+
+              case 1:
+                ukuran = 30;
+                break;
+
+              case 2:
+                ukuran = 20;
+                break;
+            }
+          } else {
+            switch (ind) {
+              case 0:
+                ukuran = 70;
+                break;
+
+              case 1:
+                ukuran = 50;
+                break;
+
+              case 2:
+                ukuran = 40;
+                break;
+            }
           }
           return (
             <div
               className={Style.jawab}
-              
               style={{
-// @ts-ignore
+                // @ts-ignore
 
                 "--warna": "#33a474",
                 "--ukuran": `${ukuran}px`,
@@ -157,22 +198,36 @@ function Pertanyaan({
         })}
         {bobot2.map((el, ind) => {
           let ukuran = 0;
-          switch (ind) {
-            case 0:
-              ukuran = 40;
-              break;
-            case 1:
-              ukuran = 50;
-              break;
-            case 2:
-              ukuran = 70;
-              break;
+          if (isMobile) {
+            switch (ind) {
+              case 0:
+                ukuran= 20;
+                break
+              case 1:
+                ukuran = 30;
+                break
+              case 2:
+                ukuran = 40;
+                break
+            }
+          } else {
+            switch (ind) {
+              case 0:
+                ukuran = 40;
+                break;
+              case 1:
+                ukuran = 50;
+                break;
+              case 2:
+                ukuran = 70;
+                break;
+            }
           }
           return (
             <div
               className={Style.jawab}
               style={{
-// @ts-ignore
+                // @ts-ignore
 
                 "--warna": "#88619a",
                 "--ukuran": `${ukuran}px`,
