@@ -146,20 +146,21 @@ function Pertanyaan({
       ></div>
       <p style={{ textAlign: "center", fontSize: !isMobile ? "x-large" : "large" }}>{pertanyaan}</p>
       <div className={Style.answers}>
+        <p style={{color:"#33a474", display:"flex",alignItems:"center", fontSize:isMobile ? "medium" :"larger"}}>Setuju</p>
         {bobot.map((el, ind) => {
           let ukuran = 0;
           if (isMobile) {
             switch (ind) {
               case 0:
-                ukuran = 2;
+                ukuran = 2.5;
                 break;
 
               case 1:
-                ukuran = 1.5;
+                ukuran = 2;
                 break;
 
               case 2:
-                ukuran = 1.3;
+                ukuran = 1.5;
                 break;
             }
           } else {
@@ -201,13 +202,13 @@ function Pertanyaan({
           if (isMobile) {
             switch (ind) {
               case 0:
-                ukuran= 1.3;
+                ukuran= 1.5;
                 break
               case 1:
-                ukuran = 1.5;
+                ukuran = 2;
                 break
               case 2:
-                ukuran = 2;
+                ukuran = 2.5;
                 break
             }
           } else {
@@ -242,6 +243,7 @@ function Pertanyaan({
             </div>
           );
         })}
+        <p style={{color:"#88619a", display:"flex",alignItems:"center", fontSize:isMobile ? "small" :"larger"}}>Tidak Setuju</p>
       </div>
       <hr />
     </div>

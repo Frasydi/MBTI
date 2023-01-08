@@ -98,11 +98,16 @@
         
         
     }
-    
+    .questions {
+        width : 100%
+    }
     .welcomeText {
         height: 100vh;
     }
     .main {
         margin-top: 40vh;
+    }
+    .answers {
+        gap : 0.5rem;
     }
 }
