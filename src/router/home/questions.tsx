@@ -151,15 +151,15 @@ function Pertanyaan({
           if (isMobile) {
             switch (ind) {
               case 0:
-                ukuran = 40;
+                ukuran = 2;
                 break;
 
               case 1:
-                ukuran = 30;
+                ukuran = 1.5;
                 break;
 
               case 2:
-                ukuran = 20;
+                ukuran = 1.3;
                 break;
             }
           } else {
@@ -184,7 +184,7 @@ function Pertanyaan({
                 // @ts-ignore
 
                 "--warna": "#33a474",
-                "--ukuran": `${ukuran}px`,
+                "--ukuran": isMobile ? `${ukuran}rem`:`${ukuran}px`,
                 backgroundColor: terjawab == ind ? "var(--warna)" : "",
               }}
               onClick={() => {
@@ -201,13 +201,13 @@ function Pertanyaan({
           if (isMobile) {
             switch (ind) {
               case 0:
-                ukuran= 20;
+                ukuran= 1.3;
                 break
               case 1:
-                ukuran = 30;
+                ukuran = 1.5;
                 break
               case 2:
-                ukuran = 40;
+                ukuran = 2;
                 break
             }
           } else {
@@ -230,7 +230,7 @@ function Pertanyaan({
                 // @ts-ignore
 
                 "--warna": "#88619a",
-                "--ukuran": `${ukuran}px`,
+                "--ukuran": isMobile ? `${ukuran}rem`:`${ukuran}px`,
                 backgroundColor: terjawab == ind + 3 ? "var(--warna)" : "",
               }}
               onClick={() => {
