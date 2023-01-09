@@ -6,7 +6,7 @@ export default function ItemSlide({index,children, elements}:{index:number, chil
     return(
         <div className={Style.itemsSlide} >
             <div className={Style.items} style={{width:"100%", height:"100%" ,transform : ` translateX(-${index*100}%)`, transition:"all 0.5s"}}>
-
+            
             {
                 elements.map((el:ReactNode) => (
                     <div className={Style.item}>

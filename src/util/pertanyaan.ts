@@ -39,7 +39,7 @@ const pertanyaan:pertanyaans[] = [
             "Apakah Anda lebih suka membuat keputusan berdasarkan fakta dan logika?",
             "Apakah Anda lebih suka menyelesaikan masalah dengan cara yang sistematis dan terstruktur?",
             "Apakah Anda lebih suka memikirkan pro dan kontra suatu keputusan?",
-            "Apakah Anda lebih suka mengekspresikan perasaan Anda secara terbuka?",
+            "Apakah Anda tidak suka mengekspresikan perasaan Anda secara terbuka?",
             "Apakah Anda lebih suka menggunakan analisis dan perhitungan dalam menyelesaikan masalah?",
             "Apakah Anda lebih suka bekerja pada proyek yang membutuhkan perencanaan dan kontrol ketat?",
             "Apakah Anda lebih suka menjadi pemimpin yang membuat keputusan dengan cepat dan tegas?",
