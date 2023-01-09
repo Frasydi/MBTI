@@ -19,7 +19,7 @@ export default function Hasil() {
         <>
         <div className={Style.hasil}>
             <h1>Anda adalah {kepribadian.title}({kepribadian.kepribadian})</h1>
-            <p>Anda adalah {kepribadian.tentang}</p>
+            <p style={{width:"50%", margin:"auto"}}>Anda adalah {kepribadian.tentang}</p>
         </div>
         <div className={Style.charts}>
             <div className={Style.chartContainer}>
